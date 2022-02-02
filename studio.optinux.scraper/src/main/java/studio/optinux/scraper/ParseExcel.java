@@ -34,7 +34,7 @@ public class ParseExcel extends ImageDownloader {
         CellAddress = cell.getAddress(); // get cellAdress
         System.out.println(CellAddress); // DEBUG
 
-        String temp = CellAddress; // TODO: get this to work
+        String temp = CellAddress.toString(); // convert CellAdress to String
 
         char firstChar = temp.charAt(0); // take first Character from the newly created String
 

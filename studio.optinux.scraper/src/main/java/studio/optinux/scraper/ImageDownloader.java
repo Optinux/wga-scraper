@@ -16,12 +16,7 @@ public class ImageDownloader {
     try {
       URL url = new URL(search); // set URL
       String USER_AGENT =
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"; // proper
-      // User-Agent
-      // ->
-      // no
-      // getting
-      // blocked
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"; // proper User-Agent so i dont get blocked
       URLConnection con = url.openConnection(); // start the connection
       con.setRequestProperty("User-Agent", USER_AGENT); // set User-Agent
       inputStream = con.getInputStream(); // get Data from server
