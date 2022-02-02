@@ -18,16 +18,14 @@ public class ParseExcel extends ImageDownloader {
 
   public static void main(String[] args) throws IOException {
     String excelFilePath = "catalog-edit.xlsx"; // specify the file that is being used
-    FileInputStream inputStream = new FileInputStream(new File(excelFilePath)); // start IO-Stuff
+    FileInputStream inputStream = new FileInputStream(excelFilePath); // start IO-Stuff
 
     Workbook workbook = new XSSFWorkbook(inputStream); // basically read the .xlsx
     org.apache.poi.ss.usermodel.Sheet firstSheet = workbook.getSheetAt(0);
-    Iterator<Row> iterator = firstSheet.iterator();
 
-    while (iterator.hasNext()) { // stop after there is no row left
+    for (Row cells : firstSheet) { // stop after there is no row left
       canContinue = false; //
-      Row nextRow = iterator.next();
-      Iterator<Cell> cellIterator = nextRow.cellIterator();
+      Iterator<Cell> cellIterator = cells.cellIterator();
 
       while (cellIterator.hasNext()) { // stop after there is no cell left
         Cell cell = cellIterator.next(); // iterate through excel sheet cells
@@ -56,7 +54,7 @@ public class ParseExcel extends ImageDownloader {
       System.out.println("Updated PATH Input: " + CurrentStringPATH); // DEBUG
       DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
 
-      while (canContinue = false) { // wait until the image has finished downloading in order to avoid ratelimiting and / or stackoverflow
+      while (canContinue == false) { // wait until the image has finished downloading in order to avoid ratelimiting and / or stackoverflow
         System.out.println("Waiting for image to download...");
       }
     }

@@ -37,7 +37,7 @@ public class ImageDownloader {
     canContinue = true;
   }
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     ImageDownloader id1 = new ImageDownloader();
     /*
      * id1.DownloadImage("https://www.wikimedia.de/wp-content/uploads/2020/12/Wikipedia_mini_globe_handheld-720x405.jpg",./output/test.jpg");
