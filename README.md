@@ -12,7 +12,7 @@ The source for the images can be found [here](https://www.wga.hu/).
 
   `java -jar .\wga-scraper-0.1-jar-with-dependencies.jar`
 
-  <sup><sup> Note: This has only been tested with [Java 17](https://adoptium.net/) and [Java 8](https://developer.ibm.com/languages/java/semeru-runtimes/downloads). Other versions might behave differntly. <sup><sup>
+  <sup><sup> Note: This has only been tested with [Java 17](https://adoptium.net/) and [Java 8](https://developer.ibm.com/languages/java/semeru-runtimes/downloads). Other versions might behave differently. <sup><sup>
 
 ## Building from Source 🧱
 
@@ -27,3 +27,8 @@ The source for the images can be found [here](https://www.wga.hu/).
 - make all DEBUG stuff optional (silent switch)
 - create a proper CLI for the .jar
 - make it use the entire database in its raw form instead of relying on an already trimmed down version
+
+ <details>
+    <summary>      
+</summary>this somehow took ~8h to do due to me having to pretty much learn 80% of this from scratch lol
+ </details>
