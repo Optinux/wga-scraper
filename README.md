@@ -16,17 +16,18 @@ The source for the images can be found [here](https://www.wga.hu/).
 
 ## Building from Source 🧱
 
-- git clone the repo
+- `git clone` the repo
 - Navigate into ./studio.optinux.scraper/
-- open up a terminal and run `mvn package` to compile the application
-- you will find the result in `./studio.optinux.scraper/target/wga-scraper-0.1-jar-with-dependencies.jar`
+- Make sure that you have [maven](https://maven.apache.org/index.html) installed
+- Open up a terminal and run `mvn package` to compile the application
+- You will find the result in `./studio.optinux.scraper/target/wga-scraper-0.1-jar-with-dependencies.jar`
 
 ## TODO: 📝
 
-- implement the optional use of proxies in order to circumvent ratelimiting / ip-banning
-- make all DEBUG stuff optional (silent switch)
-- create a proper CLI for the .jar
-- make it use the entire database in its raw form instead of relying on an already trimmed down version
+- Implement the optional use of proxies in order to circumvent ratelimiting / ip-banning
+- Make all DEBUG stuff optional (silent switch)
+- Create a proper CLI for the .jar
+- Make it use the entire database in its raw form instead of relying on an already trimmed down version
 
  <details>
     <summary>      
