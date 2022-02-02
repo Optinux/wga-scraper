@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -51,17 +52,19 @@ public class ParseExcel extends ImageDownloader {
       }
       CurrentStringURL = CurrentStringURL.replace("/html/", "/art/"); //Replace the subirectory
       CurrentStringURL = CurrentStringURL.replace("html", "jpg"); // Replace .html w/ .jpg -> direct link to image
-      CurrentStringPATH = "./output/" + CurrentStringPATH + ".jpg"; // Convert "number" into usable file path
+      String randomString = RandomStringUtils.randomAlphanumeric(10); // generate random String so that the files dont overwrite each other
+      CurrentStringPATH =
+        "./output/" + "[" + randomString + "] " + CurrentStringPATH + ".jpg"; // Convert "number" into usable file path and add a random String
       System.out.println("Updated URL Input: " + CurrentStringURL); // DEBUG
       System.out.println("Updated PATH Input: " + CurrentStringPATH); // DEBUG
       DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
 
-      while (canContinue = false) { // wait until the image has finished downloading in order to avoid ratelimiting and / or stackoverflow
-        System.out.println("Waiting for image to download...");
+      while (canContinue == false) { // wait until the image has finished downloading in case something goes wrong in the ImageDownloader
+        System.out.println("Waiting for image to download..."); //DEBUG
       }
     }
-    workbook.close();
-    inputStream.close();
+    workbook.close(); // close IO-Stuff
+    inputStream.close(); // close IO-Stuff
   }
 }
 // this took way longer than it should have -Optinux
