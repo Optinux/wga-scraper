@@ -9,6 +9,8 @@ import java.net.URLConnection;
 
 public class ImageDownloader {
 
+  public static boolean canContinue;
+
   public static void DownloadImage(String search, String path)
     throws IOException {
     InputStream inputStream = null; // start IO-stuff
@@ -27,10 +29,12 @@ public class ImageDownloader {
         outputStream.write(buffer, 0, length); // write to Disk
       }
     } catch (Exception ex) {
-      System.out.println("Something broke!");
+      System.out.println("Something broke while trying to download the image!");
     }
     outputStream.close(); // close the IO stuff
     inputStream.close(); // close the IO stuff
+
+    canContinue = true;
   }
 
   public static void main(String[] args) throws IOException {

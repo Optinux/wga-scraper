@@ -25,6 +25,7 @@ public class ParseExcel extends ImageDownloader {
     Iterator<Row> iterator = firstSheet.iterator();
 
     while (iterator.hasNext()) { // stop after there is no row left
+      canContinue = false; //
       Row nextRow = iterator.next();
       Iterator<Cell> cellIterator = nextRow.cellIterator();
 
@@ -48,11 +49,16 @@ public class ParseExcel extends ImageDownloader {
           System.out.println(CurrentStringPATH);
         }
       }
-      CurrentStringURL = CurrentStringURL.replace("html", "jpg"); // Replace .html w/ .jpg -> ImageDownloader
+      CurrentStringURL = CurrentStringURL.replace("/html/", "/art/"); //Replace the subirectory
+      CurrentStringURL = CurrentStringURL.replace("html", "jpg"); // Replace .html w/ .jpg -> direct link to image
       CurrentStringPATH = "./output/" + CurrentStringPATH + ".jpg"; // Convert "number" into usable file path
       System.out.println("Updated URL Input: " + CurrentStringURL); // DEBUG
       System.out.println("Updated PATH Input: " + CurrentStringPATH); // DEBUG
       DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
+
+      while (canContinue = false) { // wait until the image has finished downloading in order to avoid ratelimiting and / or stackoverflow
+        System.out.println("Waiting for image to download...");
+      }
     }
     workbook.close();
     inputStream.close();
