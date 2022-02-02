@@ -54,7 +54,15 @@ public class ParseExcel extends ImageDownloader {
       CurrentStringURL = CurrentStringURL.replace("html", "jpg"); // Replace .html w/ .jpg -> direct link to image
       String randomString = RandomStringUtils.randomAlphanumeric(10); // generate random String so that the files dont overwrite each other
       CurrentStringPATH =
-        "./output/" + "[" + randomString + "] " + CurrentStringPATH + ".jpg"; // Convert "number" into usable file path and add a random String
+        "./output/" +
+        "[" +
+        randomString +
+        "] " +
+        "year:[" +
+        CurrentStringPATH +
+        "] " +
+        ".jpg"; // Convert "number" into usable file path and add a random String.
+      // On a Sidenote: Why is the automatic code formatter in VS Code so bad lol, just look at what it did to my CurrenStringPATH
       System.out.println("Updated URL Input: " + CurrentStringURL); // DEBUG
       System.out.println("Updated PATH Input: " + CurrentStringPATH); // DEBUG
       DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
