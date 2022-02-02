@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "java",
+      "mainClass": "studio.optinux.scraper.ParseExcel",
+      "targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+      "elements": ["${compileOutput}", "${dependencies}"],
+      "problemMatcher": [],
+      "label": "java: exportjar:wga-scraper",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
