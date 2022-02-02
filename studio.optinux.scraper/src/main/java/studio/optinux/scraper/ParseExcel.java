@@ -55,12 +55,12 @@ public class ParseExcel extends ImageDownloader {
       String randomString = RandomStringUtils.randomAlphanumeric(10); // generate random String so that the files dont overwrite each other
       CurrentStringPATH =
         "./output/" +
-        "[" +
+        "idString=[" +
         randomString +
-        "] " +
-        "year:[" +
+        "]_" +
+        "year=[" +
         CurrentStringPATH +
-        "] " +
+        "]" +
         ".jpg"; // Convert "number" into usable file path and add a random String.
       // On a Sidenote: Why is the automatic code formatter in VS Code so bad lol, just look at what it did to my CurrenStringPATH
       System.out.println("Updated URL Input: " + CurrentStringURL); // DEBUG
