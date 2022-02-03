@@ -20,7 +20,7 @@ The source for the images can be found [here](https://www.wga.hu/).
 - Navigate into ./studio.optinux.scraper/
 - Make sure that you have [Maven](https://maven.apache.org/index.html) installed
 - Open up a terminal and run `mvn package` to compile the application
-- You will find the result in `./studio.optinux.scraper/target/wga-scraper-0.1-jar-with-dependencies.jar`
+- You will find the result in `./studio.optinux.scraper/target/wga-scraper-0.2-jar-with-dependencies.jar`
 
 ## TODO: 📝
 
