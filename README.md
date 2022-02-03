@@ -12,12 +12,12 @@ The source for the images can be found [here](https://www.wga.hu/).
 
   `java -jar .\wga-scraper-0.2-jar-with-dependencies.jar`
 
-  <sup><sup> Note: This has only been tested with [Java 17](https://adoptium.net/) and [Java 8](https://developer.ibm.com/languages/java/semeru-runtimes/downloads). Other versions might behave differently. <sup><sup>
+  <sup><sup> Note: This has only been tested with [Java 17](https://adoptium.net/) (recommended) and [Java 8](https://developer.ibm.com/languages/java/semeru-runtimes/downloads). Other versions might behave differently. <sup><sup>
 
 ## Building from Source 🧱
 
 - `git clone` the repo
-- Navigate into ./studio.optinux.scraper/
+- Navigate into `./studio.optinux.scraper/`
 - Make sure that you have [Maven](https://maven.apache.org/index.html) installed
 - Open up a terminal and run `mvn package` to compile the application
 - You will find the result in `./studio.optinux.scraper/target`
