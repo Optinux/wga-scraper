@@ -3,7 +3,7 @@
   <groupId>studio.optinux.scraper</groupId>
   <artifactId>wga-scraper</artifactId>
   <packaging>jar</packaging>
-  <version>0.1</version>
+  <version>0.2</version>
   <name>studio.optinux.scraper</name>
   <url>https://optinux.studio/</url>
 

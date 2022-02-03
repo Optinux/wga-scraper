@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="studio.optinux.scraper.AppTest" time="0.002" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="17.0.1+12"/>
+    <property name="sun.boot.library.path" value="C:\Users\Tobias\scoop\apps\temurin-jdk\current\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="G:\GitHub\wga-scraper\studio.optinux.scraper"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="DE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="G:\GitHub\wga-scraper\studio.optinux.scraper"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="17.0.1+12"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Tobias\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\Tobias\scoop\apps\maven\current\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\Tobias\scoop\apps\temurin-jdk\current\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Touch Portal\plugins\adb\platform-tools;C:\Program Files\Mullvad VPN\resources;C:\Users\Tobias\scoop\apps\temurin-jdk\current\bin;C:\Users\Tobias\scoop\apps\maven\current\bin;C:\Users\Tobias\scoop\apps\imagemagick\current;C:\Users\Tobias\scoop\apps\oh-my-posh\current\bin;C:\Users\Tobias\scoop\apps\nodejs\current\bin;C:\Users\Tobias\scoop\apps\nodejs\current;C:\Users\Tobias\scoop\apps\python\current\Scripts;C:\Users\Tobias\scoop\apps\python\current;C:\Users\Tobias\go\bin;C:\Users\Tobias\scoop\apps\yarn\current\global\node_modules\.bin;C:\Users\Tobias\scoop\apps\yarn\current\bin;C:\Users\Tobias\scoop\apps\vscode\current\bin;C:\Users\Tobias\scoop\apps\openssl\current\bin;C:\Users\Tobias\scoop\apps\yarn\current\Yarn\bin;C:\Users\Tobias\scoop\apps\perl\current\perl\site\bin;C:\Users\Tobias\scoop\apps\perl\current\perl\bin;C:\Users\Tobias\scoop\apps\perl\current\c\bin;C:\Users\Tobias\scoop\apps\android-sdk\current\tools\bin;C:\Users\Tobias\scoop\shims;C:\Users\Tobias\AppData\Local\Microsoft\WindowsApps;C:\Users\Tobias\.dotnet\tools;."/>
+    <property name="maven.conf" value="C:\Users\Tobias\scoop\apps\maven\current/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Users\Tobias\scoop\apps\maven\current\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Tobias"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="user.name" value="Tobias"/>
+    <property name="java.class.path" value="C:\Users\Tobias\scoop\apps\maven\current\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="java.home" value="C:\Users\Tobias\scoop\apps\temurin-jdk\current"/>
+    <property name="user.language" value="de"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="17.0.1"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.stderr.encoding" value="UTF-8"/>
+    <property name="maven.home" value="C:\Users\Tobias\scoop\apps\maven\current"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2021-10-19"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="Temurin-17.0.1+12"/>
+    <property name="sun.stdout.encoding" value="UTF-8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="studio.optinux.scraper.AppTest" name="testApp" time="0.002"/>
+</testsuite>
