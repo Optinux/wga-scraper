@@ -33,15 +33,20 @@ public class ParseExcel extends ImageDownloader {
       debugMode = scan1.nextBoolean();
     }
     System.out.println("");
-    if (debugMode == true) {
-      System.out.println("downloading Images! check ./output! [debugMode]");
-    } else {
-      System.out.println("downloading Images! check ./output!");
-    }
 
     Path path = Paths.get("./output/");
     if (Files.exists(path)) {} else { // check if directory already exists -> allow for multiple use
       Files.createDirectory(path); // create directory if == false
+      System.out.println("created directory!");
+    }
+    if (Files.exists(path)) {
+      System.out.println("directory already exists, skipping!");
+    }
+    System.out.println("");
+    if (debugMode == true) {
+      System.out.println("downloading Images! check ./output! [debugMode]");
+    } else {
+      System.out.println("downloading Images! check ./output!");
     }
 
     String excelFilePath = "catalog-edit.xlsx"; // specify the file that is being used
