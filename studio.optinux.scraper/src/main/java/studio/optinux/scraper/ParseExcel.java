@@ -23,9 +23,25 @@ public class ParseExcel extends ImageDownloader {
   public static boolean debugMode; // if(== true){-> no debugLogs}
 
   public static void main(String[] args) throws IOException {
-    System.out.println("░█░█░█▀▀░█▀█░░░░░█▀▀░█▀▀░█▀▄░█▀█░█▀█░█▀▀░█▀▄");
-    System.out.println("░█▄█░█░█░█▀█░▄▄▄░▀▀█░█░░░█▀▄░█▀█░█▀▀░█▀▀░█▀▄");
-    System.out.println("░▀░▀░▀▀▀░▀░▀░░░░░▀▀▀░▀▀▀░▀░▀░▀░▀░▀░░░▀▀▀░▀░▀");
+    System.out.println(
+      "db   d8b   db  d888b   .d8b.         .d8888.  .o88b. d8888b.  .d8b.  d8888b. d88888b d8888b."
+    );
+    System.out.println(
+      "88   I8I   88 88' Y8b d8' `8b        88'  YP d8P  Y8 88  `8D d8' `8b 88  `8D 88'     88  `8D"
+    );
+    System.out.println(
+      "88   I8I   88 88      88ooo88        `8bo.   8P      88oobY' 88ooo88 88oodD' 88ooooo 88oobY'"
+    );
+    System.out.println(
+      "Y8   I8I   88 88  ooo 88~~~88 C8888D   `Y8b. 8b      88`8b   88~~~88 88~~~   88~~~~~ 88`8b  "
+    );
+    System.out.println(
+      "`8b d8'8b d8' 88. ~8~ 88   88        db   8D Y8b  d8 88 `88. 88   88 88      88.     88 `88."
+    );
+    System.out.println(
+      " `8b8' `8d8'   Y888P  YP   YP        `8888Y'  `Y88P' 88   YD YP   YP 88      Y88888P 88   YD"
+    );
+    System.out.println("");
     System.out.println("by Optinux");
     System.out.println("");
     System.out.println("enable debug mode? (true/false)");
