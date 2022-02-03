@@ -33,15 +33,18 @@ public class ParseExcel extends ImageDownloader {
       debugMode = scan1.nextBoolean();
     }
     System.out.println("");
-    if (debugMode == true) {
-      System.out.println("downloading Images! check ./output! [debugMode]");
-    } else {
-      System.out.println("downloading Images! check ./output!");
-    }
 
     Path path = Paths.get("./output/");
     if (Files.exists(path)) {} else { // check if directory already exists -> allow for multiple use
       Files.createDirectory(path); // create directory if == false
+      System.out.println("created directory!");
+    }
+    System.out.println("directory already exists, skipping!");
+    System.out.println("");
+    if (debugMode == true) {
+      System.out.println("downloading Images! check ./output! [debugMode]");
+    } else {
+      System.out.println("downloading Images! check ./output!");
     }
 
     String excelFilePath = "catalog-edit.xlsx"; // specify the file that is being used
@@ -67,43 +70,69 @@ public class ParseExcel extends ImageDownloader {
 
         char firstChar = temp.charAt(0); // take first Character from the newly created String
 
-        if (firstChar == 'A') { // check if its from Column A -> URL
-          CurrentStringURL = cell.getStringCellValue();
+        if (firstChar == 'H') { // check if its from Column H -> painting
           if (debugMode == true) {
-            System.out.println(CurrentStringURL);
-          } //DEBUG
-        }
-
-        if (firstChar == 'B') { // check if its from Column B -> PATH
-          CurrentStringPATH = cell.getStringCellValue();
+            System.out.println("current first Char = " + firstChar);
+          } // DEBUG
+          String temp2 = cell.getStringCellValue(); // create new temporary object due to a bug ive encountered with doing everything in the if() clause
           if (debugMode == true) {
-            System.out.println(CurrentStringPATH);
-          } //DEBUG
-        }
-      }
-      CurrentStringURL = CurrentStringURL.replace("/html/", "/art/"); //Replace the subirectory
-      CurrentStringURL = CurrentStringURL.replace("html", "jpg"); // Replace .html w/ .jpg -> direct link to image
-      String randomString = RandomStringUtils.randomAlphanumeric(10); // generate random String so that the files dont overwrite each other
-      CurrentStringPATH =
-        "./output/" +
-        "idString=[" +
-        randomString +
-        "]_" +
-        "year=[" +
-        CurrentStringPATH +
-        "]" +
-        ".jpg"; // Convert "number" into usable file path and add a random String.
-      // On a Sidenote: Why is the automatic code formatter in VS Code so bad lol, just look at what it did to my CurrenStringPATH
-      if (debugMode == true) {
-        System.out.println("Updated URL Input: " + CurrentStringURL);
-      } // DEBUG
-      if (debugMode == true) {
-        System.out.println("Updated PATH Input: " + CurrentStringPATH);
-      } // DEBUG
-      DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
+            System.out.println("Current StringCellValue = " + temp2);
+          } // DEBUG
+          if (temp2.equals("painting")) { //check if its a painting, .equals() cause == doesnt work -> cuz afaik I dont want to compare an object here
+            if (debugMode == true) {
+              System.out.println("it is a painting");
+            } // DEBUG
+            cell = cellIterator.next(); //TODO: FIX THIS NOT ITERATING FOR SOME REASON
+            if (debugMode == true) {
+              System.out.println(
+                "current first Char = " + firstChar + " <- this shouldnt be H"
+              );
+            } // DEBUG
+            while (firstChar != 'H') { //rotate until its back at Column H
+              if (firstChar == 'G') { // check if its from Column G -> URL
+                CurrentStringURL = cell.getStringCellValue();
+                if (debugMode == true) {
+                  System.out.println(CurrentStringURL);
+                } //DEBUG
+              }
 
-      while (canContinue == false) { // wait until the image has finished downloading in case something goes wrong in the ImageDownloader
-        System.out.println("Waiting for image to download...");
+              if (firstChar == 'K') { // check if its from Column K -> PATH / year
+                CurrentStringPATH = cell.getStringCellValue();
+                if (debugMode == true) {
+                  System.out.println(CurrentStringPATH);
+                } //DEBUG
+              }
+              cell = cellIterator.next();
+              if (debugMode == true) {
+                System.out.println("iterated to the next cell!");
+              } //DEBUG
+            }
+            CurrentStringURL = CurrentStringURL.replace("/html/", "/art/"); //Replace the subirectory
+            CurrentStringURL = CurrentStringURL.replace("html", "jpg"); // Replace .html w/ .jpg -> direct link to image
+            String randomString = RandomStringUtils.randomAlphanumeric(10); // generate random String so that the files dont overwrite each other
+            CurrentStringPATH =
+              "./output/" +
+              "idString=[" +
+              randomString +
+              "]_" +
+              "year=[" +
+              CurrentStringPATH +
+              "]" +
+              ".jpg"; // Convert "number" into usable file path and add a random String.
+            // On a Sidenote: Why is the automatic code formatter in VS Code so bad lol, just look at what it did to my CurrenStringPATH
+            if (debugMode == true) {
+              System.out.println("Updated URL Input: " + CurrentStringURL);
+            } // DEBUG
+            if (debugMode == true) {
+              System.out.println("Updated PATH Input: " + CurrentStringPATH);
+            } // DEBUG
+            DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
+
+            while (canContinue == false) { // wait until the image has finished downloading in case something goes wrong in the ImageDownloader
+              System.out.println("Waiting for image to download...");
+            }
+          } //only if the current cell value is a painting
+        }
       }
     }
     workbook.close(); // close IO-Stuff
