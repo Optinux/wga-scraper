@@ -27,6 +27,8 @@ The source for the images can be found [here](https://www.wga.hu/).
 - Implement the optional use of proxies in order to circumvent ratelimiting / ip-banning
 - Make it use the entire database in its raw form instead of relying on an already trimmed down version
 
+  <sup><sup> see branch [currently_broken](https://github.com/Optinux/wga-scraper/tree/currently_broken) for my failed attempts regarding this
+
  <details>
     <summary>      
 </summary>this somehow took ~8h to do due to me having to pretty much learn 80% of this from scratch lol
