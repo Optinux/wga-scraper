@@ -35,12 +35,11 @@ public class ParseExcel extends ImageDownloader {
     System.out.println("");
 
     Path path = Paths.get("./output/");
-    if (Files.exists(path)) {} else { // check if directory already exists -> allow for multiple use
-      Files.createDirectory(path); // create directory if == false
-      System.out.println("created directory!");
-    }
     if (Files.exists(path)) {
       System.out.println("directory already exists, skipping!");
+    } else { // check if directory already exists -> allow for multiple use
+      Files.createDirectory(path); // create directory if == false
+      System.out.println("created directory!");
     }
     System.out.println("");
     if (debugMode == true) {
