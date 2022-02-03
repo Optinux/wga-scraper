@@ -3,7 +3,11 @@ package studio.optinux.scraper;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
+import java.util.Scanner;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -16,8 +20,30 @@ public class ParseExcel extends ImageDownloader {
   public static String CurrentStringURL; // create variables to pass onto the Downloader
   public static String CurrentStringPATH; // create variables to pass onto the Downloader
   public static CellAddress CellAddress; // create variables to pass onto the Downloader
+  public static boolean debugMode; // if(== true){-> no debugLogs}
 
   public static void main(String[] args) throws IOException {
+    System.out.println("░█░█░█▀▀░█▀█░░░░░█▀▀░█▀▀░█▀▄░█▀█░█▀█░█▀▀░█▀▄");
+    System.out.println("░█▄█░█░█░█▀█░▄▄▄░▀▀█░█░░░█▀▄░█▀█░█▀▀░█▀▀░█▀▄");
+    System.out.println("░▀░▀░▀▀▀░▀░▀░░░░░▀▀▀░▀▀▀░▀░▀░▀░▀░▀░░░▀▀▀░▀░▀");
+    System.out.println("by Optinux");
+    System.out.println("");
+    System.out.println("enable debug mode? (true/false)");
+    try (Scanner scan1 = new Scanner(System.in)) { // important: close afterwards in order to prevent memory leaks, thank you VS Code!
+      debugMode = scan1.nextBoolean();
+    }
+    System.out.println("");
+    if (debugMode == true) {
+      System.out.println("downloading Images! check ./output! [debugMode]");
+    } else {
+      System.out.println("downloading Images! check ./output!");
+    }
+
+    Path path = Paths.get("./output/");
+    if (Files.exists(path)) {} else { // check if directory already exists -> allow for multiple use
+      Files.createDirectory(path); // create directory if == false
+    }
+
     String excelFilePath = "catalog-edit.xlsx"; // specify the file that is being used
     FileInputStream inputStream = new FileInputStream(new File(excelFilePath)); // start IO-Stuff
 
@@ -34,20 +60,25 @@ public class ParseExcel extends ImageDownloader {
         Cell cell = cellIterator.next(); // iterate through excel sheet cells
 
         CellAddress = cell.getAddress(); // get cellAdress
-        System.out.println(CellAddress); // DEBUG
-
+        if (debugMode == true) {
+          System.out.println(CellAddress); // DEBUG
+        }
         String temp = CellAddress.toString(); // convert CellAdress to String
 
         char firstChar = temp.charAt(0); // take first Character from the newly created String
 
         if (firstChar == 'A') { // check if its from Column A -> URL
           CurrentStringURL = cell.getStringCellValue();
-          System.out.println(CurrentStringURL);
+          if (debugMode == true) {
+            System.out.println(CurrentStringURL);
+          } //DEBUG
         }
 
         if (firstChar == 'B') { // check if its from Column B -> PATH
           CurrentStringPATH = cell.getStringCellValue();
-          System.out.println(CurrentStringPATH);
+          if (debugMode == true) {
+            System.out.println(CurrentStringPATH);
+          } //DEBUG
         }
       }
       CurrentStringURL = CurrentStringURL.replace("/html/", "/art/"); //Replace the subirectory
@@ -63,12 +94,16 @@ public class ParseExcel extends ImageDownloader {
         "]" +
         ".jpg"; // Convert "number" into usable file path and add a random String.
       // On a Sidenote: Why is the automatic code formatter in VS Code so bad lol, just look at what it did to my CurrenStringPATH
-      System.out.println("Updated URL Input: " + CurrentStringURL); // DEBUG
-      System.out.println("Updated PATH Input: " + CurrentStringPATH); // DEBUG
+      if (debugMode == true) {
+        System.out.println("Updated URL Input: " + CurrentStringURL);
+      } // DEBUG
+      if (debugMode == true) {
+        System.out.println("Updated PATH Input: " + CurrentStringPATH);
+      } // DEBUG
       DownloadImage(CurrentStringURL, CurrentStringPATH); // execute ImageDownloader
 
       while (canContinue == false) { // wait until the image has finished downloading in case something goes wrong in the ImageDownloader
-        System.out.println("Waiting for image to download..."); //DEBUG
+        System.out.println("Waiting for image to download...");
       }
     }
     workbook.close(); // close IO-Stuff

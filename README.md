@@ -25,8 +25,6 @@ The source for the images can be found [here](https://www.wga.hu/).
 ## TODO: 📝
 
 - Implement the optional use of proxies in order to circumvent ratelimiting / ip-banning
-- Make all DEBUG stuff optional (silent switch)
-- Create a proper CLI for the .jar
 - Make it use the entire database in its raw form instead of relying on an already trimmed down version
 
  <details>
