@@ -82,7 +82,10 @@ public class ParseExcel extends ImageDownloader {
             if (debugMode == true) {
               System.out.println("it is a painting");
             } // DEBUG
+
             cell = cellIterator.next(); //TODO: FIX THIS NOT ITERATING FOR SOME REASON
+            temp = CellAddress.toString();
+            firstChar = temp.charAt(0);
             if (debugMode == true) {
               System.out.println(
                 "current first Char = " + firstChar + " <- this shouldnt be H"
@@ -103,6 +106,8 @@ public class ParseExcel extends ImageDownloader {
                 } //DEBUG
               }
               cell = cellIterator.next();
+              temp = CellAddress.toString();
+              firstChar = temp.charAt(0);
               if (debugMode == true) {
                 System.out.println("iterated to the next cell!");
               } //DEBUG
